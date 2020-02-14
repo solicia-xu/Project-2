@@ -4,7 +4,7 @@
 
 Based on the travel information, we want to visualize where people are going as their travel destinations. How is the destination related to their income level? Where are the most visited countries for US travelers based on flight info?
 
-Data Set:
+### Data Set:
 
 https://ourworldindata.org/tourism
 
@@ -18,7 +18,7 @@ https://data.worldbank.org/indicator/ST.INT.ARVL?view=map
 
 https://catalog.data.gov/dataset/country-travel-information
 
-Inspiring visualizations:
+### Inspiring visualizations:
 
 ![Dashboard page](Picture1.png)
 ![Dashboard page](Picture2.png)
