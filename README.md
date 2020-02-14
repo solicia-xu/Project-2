@@ -1,6 +1,6 @@
 # Project-2 Travel information per yearly basis 
 
-## Solicia, Ben, Luis C
+## Solicia, Ben, Luis Casld
 
 Based on the travel information, we want to visualize where people are going as their travel destinations. How is the destination related to their income level? Where are the most visited countries for US travelers based on flight info?
 
