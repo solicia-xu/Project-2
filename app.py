@@ -60,6 +60,8 @@ def names():
     all_country_arrivals = []
     for country in arrival_results:
         arrivals1 = {}
+        arrivals1["latitude"] = float(country.lat)
+        arrivals1["longitude"] = float(country.long)
         arrivals1["countryname"] = country.countryname
         arrivals1["countrycode"] = country.countrycode
         arrivals1["1995"] = country.y1995
@@ -107,6 +109,8 @@ def passengers():
     all_country_gdp = []
     for country in results:
         gdp1 = {}
+        gdp1["latitude"] = float(country.lat)
+        gdp1["longitude"] = float(country.long)
         gdp1["countryname"] = country.countryname
         gdp1["countrycode"] = country.countrycode
         gdp1["1995"] = country.y1995
