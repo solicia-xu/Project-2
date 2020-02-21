@@ -5,21 +5,7 @@
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 -- Database: TravelDb\
-\
--- DROP DATABASE "TravelDb";\
-\
-CREATE DATABASE "TravelDb"\
-    WITH \
-    OWNER = postgres\
-    ENCODING = 'UTF8'\
-    LC_COLLATE = 'C'\
-    LC_CTYPE = 'C'\
-    TABLESPACE = pg_default\
-    CONNECTION LIMIT = -1;\
-\
-\
--- Table: public.arrivals\
+\f0\fs24 \cf0 -- Table: public.arrivals\
 \
 -- DROP TABLE public.arrivals;\
 \
@@ -27,6 +13,8 @@ CREATE TABLE public.arrivals\
 (\
     countryname text COLLATE pg_catalog."default" NOT NULL,\
     countrycode text COLLATE pg_catalog."default",\
+    lat numeric,\
+    "long" numeric,\
     y1995 integer,\
     y1996 integer,\
     y1997 integer,\
@@ -66,6 +54,8 @@ CREATE TABLE public.gdp\
 (\
     countryname text COLLATE pg_catalog."default" NOT NULL,\
     countrycode text COLLATE pg_catalog."default",\
+    lat numeric,\
+    "long" numeric,\
     y1995 bigint,\
     y1996 bigint,\
     y1997 bigint,\
