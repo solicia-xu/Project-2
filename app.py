@@ -40,8 +40,8 @@ def welcome():
     """List all available api routes."""
     return (
         f"Available Routes:<br/>"
-        f"/api/v1.0/names<br/>"
-        f"/api/v1.0/passengers"
+        f"/arrivals>"
+        f"/gdp"
     )
 
 
