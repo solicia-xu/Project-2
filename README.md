@@ -20,9 +20,9 @@ https://catalog.data.gov/dataset/country-travel-information
 
 ### Inspiring visualizations:
 
-![Dashboard page](Picture1.png)
-![Dashboard page](Picture2.png)
-![Dashboard page](Picture3.png)
+![Dashboard page](readme_png/Picture1.png)
+![Dashboard page](readme_png/Picture2.png)
+![Dashboard page](readme_png/Picture3.png)
 
 
 
