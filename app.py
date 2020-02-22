@@ -15,7 +15,7 @@ from flask import Flask, render_template, redirect, request,jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("postgres://postgres:123abc@localhost:5432/project_2")
+engine = create_engine("postgres://postgres:postgres@localhost:5432/TravelDb")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -66,10 +66,10 @@ def latlngs():
     country_latlngs = []
     for country in arrive:
         latlngs={}
-        latlngs['country']=country.CountryName
+        latlngs['country']=country.countryname
         latlngs['location']=[]
-        latlngs['location'].append(float(country.Lat))
-        latlngs['location'].append(float(country.Long))
+        latlngs['location'].append(float(country.lat))
+        latlngs['location'].append(float(country.long))
         country_latlngs.append(latlngs)
     return jsonify(country_latlngs)
 
@@ -85,7 +85,7 @@ def countries():
     # Convert list of tuples into normal list
     all_countries = []
     for country in arrive:
-        all_countries.append(country.CountryName)
+        all_countries.append(country.countryname)
     return jsonify(all_countries)
 
 @app.route("/arrivals")
@@ -101,10 +101,10 @@ def names():
     all_country_arrivals = []
     for country in arrival_results:
         arrivals1 = {}
-        arrivals1["latitude"] = float(country.Lat)
-        arrivals1["longitude"] = float(country.Long)
-        arrivals1["countryname"] = country.CountryName
-        arrivals1["countrycode"] = country.CountryCode
+        arrivals1["latitude"] = float(country.lat)
+        arrivals1["longitude"] = float(country.long)
+        arrivals1["countryname"] = country.countryname
+        arrivals1["countrycode"] = country.countrycode
         arrivals1["1995"] = country.y1995
         arrivals1["1996"] = country.y1996
         arrivals1["1997"] = country.y1997
@@ -150,10 +150,10 @@ def passengers():
     all_country_gdp = []
     for country in results:
         gdp1 = {}
-        gdp1["latitude"] = float(country.Lat)
-        gdp1["longitude"] = float(country.Long)
-        gdp1["countryname"] = country.CountryName
-        gdp1["countrycode"] = country.CountryCode
+        gdp1["latitude"] = float(country.lat)
+        gdp1["longitude"] = float(country.long)
+        gdp1["countryname"] = country.countryname
+        gdp1["countrycode"] = country.countrycode
         gdp1["1995"] = country.y1995
         gdp1["1996"] = country.y1996
         gdp1["1997"] = country.y1997
