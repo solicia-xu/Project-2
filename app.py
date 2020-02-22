@@ -9,13 +9,13 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
-from flask import Flask, jsonify
+from flask import Flask, render_template, redirect, request,jsonify
 
-
+#/Users/solicia/Downloads/Project-2-master/app.py
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("postgres://postgres:postgres@localhost:5432/TravelDb")
+engine = create_engine("postgres://postgres:123abc@localhost:5432/project_2")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -40,15 +40,56 @@ def welcome():
     """List all available api routes."""
     return (
         f"Available Routes:<br/>"
-        f"/arrivals>"
-        f"/gdp"
+        f"/tojavascript<br/>"
+        f"----for plotly dashboard <br/>"
+        f"/latlngs<br/>"
+        f"/countries<br/>"
+        f"/arrivals<br/>"
+        f"/gdp<br/>"
     )
 
 
+@app.route("/tojavascript")    
+def tojavascript():
+    return render_template ("index.html")
+
+@app.route("/latlngs")
+def latlngs():
+
+    # Query all arrivals info
+    session = Session(engine)
+    arrive = session.query(arrivals).all()
+    # close the session to end the communication with the database
+    session.close()
+
+    # Convert list of tuples into normal list
+    country_latlngs = []
+    for country in arrive:
+        latlngs={}
+        latlngs['country']=country.CountryName
+        latlngs['location']=[]
+        latlngs['location'].append(float(country.Lat))
+        latlngs['location'].append(float(country.Long))
+        country_latlngs.append(latlngs)
+    return jsonify(country_latlngs)
+
+@app.route("/countries")
+def countries():
+
+    # Query all arrivals info
+    session = Session(engine)
+    arrive = session.query(arrivals).all()
+    # close the session to end the communication with the database
+    session.close()
+
+    # Convert list of tuples into normal list
+    all_countries = []
+    for country in arrive:
+        all_countries.append(country.CountryName)
+    return jsonify(all_countries)
+
 @app.route("/arrivals")
 def names():
-    """Return a list of all passenger names"""
-
     # Query all passengers
     session = Session(engine)
     arrival_results = session.query(arrivals).all()
@@ -60,10 +101,10 @@ def names():
     all_country_arrivals = []
     for country in arrival_results:
         arrivals1 = {}
-        arrivals1["latitude"] = float(country.lat)
-        arrivals1["longitude"] = float(country.long)
-        arrivals1["countryname"] = country.countryname
-        arrivals1["countrycode"] = country.countrycode
+        arrivals1["latitude"] = float(country.Lat)
+        arrivals1["longitude"] = float(country.Long)
+        arrivals1["countryname"] = country.CountryName
+        arrivals1["countrycode"] = country.CountryCode
         arrivals1["1995"] = country.y1995
         arrivals1["1996"] = country.y1996
         arrivals1["1997"] = country.y1997
@@ -109,10 +150,10 @@ def passengers():
     all_country_gdp = []
     for country in results:
         gdp1 = {}
-        gdp1["latitude"] = float(country.lat)
-        gdp1["longitude"] = float(country.long)
-        gdp1["countryname"] = country.countryname
-        gdp1["countrycode"] = country.countrycode
+        gdp1["latitude"] = float(country.Lat)
+        gdp1["longitude"] = float(country.Long)
+        gdp1["countryname"] = country.CountryName
+        gdp1["countrycode"] = country.CountryCode
         gdp1["1995"] = country.y1995
         gdp1["1996"] = country.y1996
         gdp1["1997"] = country.y1997
