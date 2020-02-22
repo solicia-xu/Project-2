@@ -15,7 +15,7 @@ from flask import Flask, render_template, redirect, request,jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("postgres://postgres:postgres@localhost:5432/TravelDb")
+engine = create_engine("postgres://postgres:123abc@localhost:5432/project_2")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -66,10 +66,10 @@ def latlngs():
     country_latlngs = []
     for country in arrive:
         latlngs={}
-        latlngs['country']=country.countryname
+        latlngs['country']=country.CountryName
         latlngs['location']=[]
-        latlngs['location'].append(float(country.lat))
-        latlngs['location'].append(float(country.long))
+        latlngs['location'].append(float(country.Lat))
+        latlngs['location'].append(float(country.Long))
         country_latlngs.append(latlngs)
     return jsonify(country_latlngs)
 
@@ -85,7 +85,7 @@ def countries():
     # Convert list of tuples into normal list
     all_countries = []
     for country in arrive:
-        all_countries.append(country.countryname)
+        all_countries.append(country.CountryName)
     return jsonify(all_countries)
 
 @app.route("/arrivals")
@@ -100,43 +100,11 @@ def names():
     # Convert list of tuples into normal list
     all_country_arrivals = []
     for country in arrival_results:
-<<<<<<< HEAD
-=======
-        arrivals1 = {}
-        arrivals1["latitude"] = float(country.lat)
-        arrivals1["longitude"] = float(country.long)
-        arrivals1["countryname"] = country.countryname
-        arrivals1["countrycode"] = country.countrycode
-        arrivals1["1995"] = country.y1995
-        arrivals1["1996"] = country.y1996
-        arrivals1["1997"] = country.y1997
-        arrivals1["1998"] = country.y1998
-        arrivals1["1999"] = country.y1999
-        arrivals1["2000"] = country.y2000
-        arrivals1["2001"] = country.y2001
-        arrivals1["2002"] = country.y2002
-        arrivals1["2003"] = country.y2003
-        arrivals1["2004"] = country.y2004
-        arrivals1["2005"] = country.y2005
-        arrivals1["2006"] = country.y2006
-        arrivals1["2007"] = country.y2007
-        arrivals1["2008"] = country.y2008
-        arrivals1["2009"] = country.y2009
-        arrivals1["2010"] = country.y2010
-        arrivals1["2011"] = country.y2011
-        arrivals1["2012"] = country.y2012
-        arrivals1["2013"] = country.y2013
-        arrivals1["2014"] = country.y2014
-        arrivals1["2015"] = country.y2015
-        arrivals1["2016"] = country.y2016
-        arrivals1["2017"] = country.y2017
->>>>>>> c0b3525d91620ee01348c3b4129f75cd74d3b4dd
-
         # random_arrival ={}
         arrivals1 = {}
         arrivals1[country.CountryName] = {}
-        arrivals1[country.CountryName]["latitude"] = float(country.Lat)
-        arrivals1[country.CountryName]["longitude"] = float(country.Long)
+        # arrivals1[country.CountryName]["latitude"] = float(country.Lat)
+        # arrivals1[country.CountryName]["longitude"] = float(country.Long)
         arrivals1[country.CountryName]["countrycode"] = country.CountryCode
 
         arrivals1[country.CountryName]["Years"] = {}
@@ -163,6 +131,9 @@ def names():
         arrivals1[country.CountryName]['Years']["2015"] = country.y2015
         arrivals1[country.CountryName]['Years']["2016"] = country.y2016
         arrivals1[country.CountryName]['Years']["2017"] = country.y2017
+        arrivals1[country.CountryName]["location"] = {}
+        arrivals1[country.CountryName]['location']["lat"] = float(country.Lat)
+        arrivals1[country.CountryName]['location']["long"] = float(country.Long)
         all_country_arrivals.append(arrivals1)
     return jsonify(all_country_arrivals)
 
@@ -184,7 +155,6 @@ def passengers():
     all_country_gdp = []
     for country in results:
         gdp1 = {}
-<<<<<<< HEAD
         gdp1[country.CountryName] = {}
         gdp1[country.CountryName]["latitude"] = float(country.Lat)
         gdp1[country.CountryName]["longitude"] = float(country.Long)
@@ -214,38 +184,54 @@ def passengers():
         gdp1[country.CountryName]['Years']["2015"] = country.y2015
         gdp1[country.CountryName]['Years']["2016"] = country.y2016
         gdp1[country.CountryName]['Years']["2017"] = country.y2017
-=======
-        gdp1["latitude"] = float(country.lat)
-        gdp1["longitude"] = float(country.long)
-        gdp1["countryname"] = country.countryname
-        gdp1["countrycode"] = country.countrycode
-        gdp1["1995"] = country.y1995
-        gdp1["1996"] = country.y1996
-        gdp1["1997"] = country.y1997
-        gdp1["1998"] = country.y1998
-        gdp1["1999"] = country.y1999
-        gdp1["2000"] = country.y2000
-        gdp1["2001"] = country.y2001
-        gdp1["2002"] = country.y2002
-        gdp1["2003"] = country.y2003
-        gdp1["2004"] = country.y2004
-        gdp1["2005"] = country.y2005
-        gdp1["2006"] = country.y2006
-        gdp1["2007"] = country.y2007
-        gdp1["2008"] = country.y2008
-        gdp1["2009"] = country.y2009
-        gdp1["2010"] = country.y2010
-        gdp1["2011"] = country.y2011
-        gdp1["2012"] = country.y2012
-        gdp1["2013"] = country.y2013
-        gdp1["2014"] = country.y2014
-        gdp1["2015"] = country.y2015
-        gdp1["2016"] = country.y2016
-        gdp1["2017"] = country.y2017
->>>>>>> c0b3525d91620ee01348c3b4129f75cd74d3b4dd
         all_country_gdp.append(gdp1)
+
+
+
     return jsonify(all_country_gdp)
 
+@app.route("/years")
+def years():
+# Query all passengers
+    session = Session(engine)
+    arrival_results = session.query(arrivals).all()
+
+    # close the session to end the communication with the database
+    session.close()
+
+
+    all_country_stuff = []
+    years = {}
+    for year in range(1995,2018):
+        years[str(year)] = {}
+
+    for country in arrival_results:
+        years["1995"][str(country.CountryName)] = country.y1995
+        years["1996"][str(country.CountryName)] = country.y1996
+        years["1997"][str(country.CountryName)] = country.y1997
+        years["1998"][str(country.CountryName)] = country.y1998
+        years["1999"][str(country.CountryName)] = country.y1999
+        years["2000"][str(country.CountryName)] = country.y2000
+        years["2001"][str(country.CountryName)] = country.y2001
+        years["2002"][str(country.CountryName)] = country.y2002
+        years["2003"][str(country.CountryName)] = country.y2003
+        years["2004"][str(country.CountryName)] = country.y2004
+        years["2005"][str(country.CountryName)] = country.y2005
+        years["2006"][str(country.CountryName)] = country.y2006
+        years["2007"][str(country.CountryName)] = country.y2007
+        years["2008"][str(country.CountryName)] = country.y2008
+        years["2009"][str(country.CountryName)] = country.y2009
+        years["2010"][str(country.CountryName)] = country.y2010
+        years["2011"][str(country.CountryName)] = country.y2011
+        years["2012"][str(country.CountryName)] = country.y2012
+        years["2013"][str(country.CountryName)] = country.y2013
+        years["2014"][str(country.CountryName)] = country.y2014
+        years["2015"][str(country.CountryName)] = country.y2015
+        years["2016"][str(country.CountryName)] = country.y2016
+        years["2017"][str(country.CountryName)] = country.y2017
+        
+    all_country_stuff.append(years)
+    return jsonify(all_country_stuff)
 
 if __name__ == '__main__':
     app.run(debug=True)

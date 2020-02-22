@@ -46,30 +46,37 @@ function makePlot(countrySelected){
         }
         Plotly.newPlot('gdp-line', [trace2])
     })
-};
-// Submit Button handler
-// function optionChanged(newCountry) {
-//     // Select the input value from the form
-//     makePlot(newCountry);
-// }
-  
-//A map with all the coordinates
-d3.json('/latlngs').then(function(data) {
-		var data = [
+    d3.json('/arrivals').then(function (data) {
+        var selectedCountry = d3.select("#selDataset").node().value; 
+        data.forEach(function(d){
+            if (selectedCountry == Object.keys(d)){
+                countryData = d[selectedCountry]
+            }
+        })
+        var countryPick = countryData['location']
+        // console.log(countryData['location']['lat'])
+        // console.log(countryData['location']['long'])
+        var data1 = [
 			{
 				type: "scattermapbox",
-				text: data.country,
-				lon: data.location[0],
-				lat: data.location[1],
-				marker: { color: "fuchsia", size: 4 }
+				text: selectedCountry,
+				lon: countryData['location']['long'],
+				lat: countryData['location']['lat'],
+				marker: { color: "fuchsia", size: 5000 }
 			}
-		];
-
-		var layout = {
+        ];
+        var layout = {
 			dragmode: "zoom",
-			mapbox: { style: "open-street-map", center: { lat: 38, lon: -90 }, zoom: 3 },
+			mapbox: { style: "open-street-map"},
 			margin: { r: 0, t: 0, b: 0, l: 0 }
-		};
-
-		// Plotly.newPlot("map", data, layout);
-	});
+        };
+        console.log(data1)
+        Plotly.newPlot('map', data1, layout)
+    })
+};
+//Submit Button handler
+function optionChanged(newCountry) {
+    // Select the input value from the form
+    makePlot(newCountry);
+}
+  
