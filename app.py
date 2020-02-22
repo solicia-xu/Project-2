@@ -100,35 +100,38 @@ def names():
     # Convert list of tuples into normal list
     all_country_arrivals = []
     for country in arrival_results:
-        arrivals1 = {}
-        arrivals1["latitude"] = float(country.Lat)
-        arrivals1["longitude"] = float(country.Long)
-        arrivals1["countryname"] = country.CountryName
-        arrivals1["countrycode"] = country.CountryCode
-        arrivals1["1995"] = country.y1995
-        arrivals1["1996"] = country.y1996
-        arrivals1["1997"] = country.y1997
-        arrivals1["1998"] = country.y1998
-        arrivals1["1999"] = country.y1999
-        arrivals1["2000"] = country.y2000
-        arrivals1["2001"] = country.y2001
-        arrivals1["2002"] = country.y2002
-        arrivals1["2003"] = country.y2003
-        arrivals1["2004"] = country.y2004
-        arrivals1["2005"] = country.y2005
-        arrivals1["2006"] = country.y2006
-        arrivals1["2007"] = country.y2007
-        arrivals1["2008"] = country.y2008
-        arrivals1["2009"] = country.y2009
-        arrivals1["2010"] = country.y2010
-        arrivals1["2011"] = country.y2011
-        arrivals1["2012"] = country.y2012
-        arrivals1["2013"] = country.y2013
-        arrivals1["2014"] = country.y2014
-        arrivals1["2015"] = country.y2015
-        arrivals1["2016"] = country.y2016
-        arrivals1["2017"] = country.y2017
 
+        # random_arrival ={}
+        arrivals1 = {}
+        arrivals1[country.CountryName] = {}
+        arrivals1[country.CountryName]["latitude"] = float(country.Lat)
+        arrivals1[country.CountryName]["longitude"] = float(country.Long)
+        arrivals1[country.CountryName]["countrycode"] = country.CountryCode
+
+        arrivals1[country.CountryName]["Years"] = {}
+        arrivals1[country.CountryName]['Years']["1995"] = country.y1995
+        arrivals1[country.CountryName]['Years']["1996"] = country.y1996
+        arrivals1[country.CountryName]['Years']["1997"] = country.y1997
+        arrivals1[country.CountryName]['Years']["1998"] = country.y1998
+        arrivals1[country.CountryName]['Years']["1999"] = country.y1999
+        arrivals1[country.CountryName]['Years']["2000"] = country.y2000
+        arrivals1[country.CountryName]['Years']["2001"] = country.y2001
+        arrivals1[country.CountryName]['Years']["2002"] = country.y2002
+        arrivals1[country.CountryName]['Years']["2003"] = country.y2003
+        arrivals1[country.CountryName]['Years']["2004"] = country.y2004
+        arrivals1[country.CountryName]['Years']["2005"] = country.y2005
+        arrivals1[country.CountryName]['Years']["2006"] = country.y2006
+        arrivals1[country.CountryName]['Years']["2007"] = country.y2007
+        arrivals1[country.CountryName]['Years']["2008"] = country.y2008
+        arrivals1[country.CountryName]['Years']["2009"] = country.y2009
+        arrivals1[country.CountryName]['Years']["2010"] = country.y2010
+        arrivals1[country.CountryName]['Years']["2011"] = country.y2011
+        arrivals1[country.CountryName]['Years']["2012"] = country.y2012
+        arrivals1[country.CountryName]['Years']["2013"] = country.y2013
+        arrivals1[country.CountryName]['Years']["2014"] = country.y2014
+        arrivals1[country.CountryName]['Years']["2015"] = country.y2015
+        arrivals1[country.CountryName]['Years']["2016"] = country.y2016
+        arrivals1[country.CountryName]['Years']["2017"] = country.y2017
         all_country_arrivals.append(arrivals1)
     return jsonify(all_country_arrivals)
 
@@ -150,35 +153,36 @@ def passengers():
     all_country_gdp = []
     for country in results:
         gdp1 = {}
-        gdp1["latitude"] = float(country.Lat)
-        gdp1["longitude"] = float(country.Long)
-        gdp1["countryname"] = country.CountryName
-        gdp1["countrycode"] = country.CountryCode
-        gdp1["1995"] = country.y1995
-        gdp1["1996"] = country.y1996
-        gdp1["1997"] = country.y1997
-        gdp1["1998"] = country.y1998
-        gdp1["1999"] = country.y1999
-        gdp1["2000"] = country.y2000
-        gdp1["2001"] = country.y2001
-        gdp1["2002"] = country.y2002
-        gdp1["2003"] = country.y2003
-        gdp1["2004"] = country.y2004
-        gdp1["2005"] = country.y2005
-        gdp1["2006"] = country.y2006
-        gdp1["2007"] = country.y2007
-        gdp1["2008"] = country.y2008
-        gdp1["2009"] = country.y2009
-        gdp1["2010"] = country.y2010
-        gdp1["2011"] = country.y2011
-        gdp1["2012"] = country.y2012
-        gdp1["2013"] = country.y2013
-        gdp1["2014"] = country.y2014
-        gdp1["2015"] = country.y2015
-        gdp1["2016"] = country.y2016
-        gdp1["2017"] = country.y2017
+        gdp1[country.CountryName] = {}
+        gdp1[country.CountryName]["latitude"] = float(country.Lat)
+        gdp1[country.CountryName]["longitude"] = float(country.Long)
+        gdp1[country.CountryName]["countrycode"] = country.CountryCode
+        
+        gdp1[country.CountryName]["Years"] = {}
+        gdp1[country.CountryName]['Years']["1995"] = country.y1995
+        gdp1[country.CountryName]['Years']["1996"] = country.y1996
+        gdp1[country.CountryName]['Years']["1997"] = country.y1997
+        gdp1[country.CountryName]['Years']["1998"] = country.y1998
+        gdp1[country.CountryName]['Years']["1999"] = country.y1999
+        gdp1[country.CountryName]['Years']["2000"] = country.y2000
+        gdp1[country.CountryName]['Years']["2001"] = country.y2001
+        gdp1[country.CountryName]['Years']["2002"] = country.y2002
+        gdp1[country.CountryName]['Years']["2003"] = country.y2003
+        gdp1[country.CountryName]['Years']["2004"] = country.y2004
+        gdp1[country.CountryName]['Years']["2005"] = country.y2005
+        gdp1[country.CountryName]['Years']["2006"] = country.y2006
+        gdp1[country.CountryName]['Years']["2007"] = country.y2007
+        gdp1[country.CountryName]['Years']["2008"] = country.y2008
+        gdp1[country.CountryName]['Years']["2009"] = country.y2009
+        gdp1[country.CountryName]['Years']["2010"] = country.y2010
+        gdp1[country.CountryName]['Years']["2011"] = country.y2011
+        gdp1[country.CountryName]['Years']["2012"] = country.y2012
+        gdp1[country.CountryName]['Years']["2013"] = country.y2013
+        gdp1[country.CountryName]['Years']["2014"] = country.y2014
+        gdp1[country.CountryName]['Years']["2015"] = country.y2015
+        gdp1[country.CountryName]['Years']["2016"] = country.y2016
+        gdp1[country.CountryName]['Years']["2017"] = country.y2017
         all_country_gdp.append(gdp1)
-
     return jsonify(all_country_gdp)
 
 
