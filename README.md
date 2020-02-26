@@ -26,9 +26,14 @@
 
 ## Data Set Chosen For Visualization
 
-https://data.worldbank.org/indicator/ST.INT.ARVL?view=map
+[International Arrival Data](https://data.worldbank.org/indicator/ST.INT.ARVL?view=map)
 
-## Inspiring visualizations
+## Cleaned Datasets Used for API Creation
+
+[Cleaned Arrival Data](static/cleaned_data/ArrivalCleaned.csv)
+[Cleaned GDP Data](static/cleaned_data/Clean_InterGDP.csv)
+
+## Dashboards We Drew Inspiration From
 
 ![Dashboard page](static/readme_png/Picture1.png)
 ![Dashboard page](static/readme_png/Picture3.png)
