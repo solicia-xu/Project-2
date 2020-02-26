@@ -22,12 +22,11 @@
 2. How do arrivals in countries with higher GDPs affect number of passsengers incoming?
 3. Are all countries travel data accurately displayed from our datasets? What could cause some discrepcansies?
 
-## Data Sets Chosen For Visualization
+## Data Set Chosen For Visualization
 
 https://data.worldbank.org/indicator/ST.INT.ARVL?view=map
 
 ## Inspiring visualizations
 
 ![Dashboard page](readme_png/Picture1.png)
-![Dashboard page](readme_png/Picture2.png)
 ![Dashboard page](readme_png/Picture3.png)
