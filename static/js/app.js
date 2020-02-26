@@ -62,6 +62,7 @@ function makePlot(countrySelected){
         Plotly.newPlot('arrival-line', [trace1], layout)
     }
     )
+
     //make line graph with gdp data
     d3.json('/gdp').then(function (data) {
         var selectedCountry = d3.select("#selDataset").node().value; 
@@ -130,7 +131,7 @@ function makePlot(countrySelected){
         ];
         var layout = {
 			dragmode: "zoom",
-			mapbox: { style: "open-street-map"},
+			mapbox: { style: "open-street-map", zoom:1.5},
 			margin: { r: 0, t: 0, b: 0, l: 0 }
         };
         console.log(data1)
@@ -141,5 +142,9 @@ function makePlot(countrySelected){
 function optionChanged(newCountry) {
     // Select the input value from the form
     makePlot(newCountry);
+    // Initialize Animate on Scroll
+    AOS.init({
+      duration: 1200,
+    })
 }
   

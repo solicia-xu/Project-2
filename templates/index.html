@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="../static/css/style.css">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
     body {
         background-image: url("///");
@@ -40,16 +42,19 @@
             <option></option>
           </select>
           <br>
-          <div id="map"></div>
+          <div class="item" data-aos="flip-up">
+          <div id="map"></div></div>
         </div>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div id="arrival-line"></div>
+      <div class="item" data-aos="zoom-in-left">
+      <div id="arrival-line"></div></div>
     </div>
     <div class="col-md-6">
-      <div id="gdp-line"></div>
+      <div class="item" data-aos="zoom-in-right">
+      <div id="gdp-line"></div></div>
     </div>
   <!-- Leaflet JavaScript -->
   <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
@@ -63,6 +68,10 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
   <script src="../static/js/app.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script type="text/javascript">
+    
+  </script>
 </body>
 
 </html>
