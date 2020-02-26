@@ -18,6 +18,15 @@
 8. [NPM](https://www.npmjs.com/)
 9. [AnimateOnScroll](https://github.com/michalsnik/aos#animations)
 
+## Instructions to Run Dashboard
+
+1. Clone repo to local machine and save file path. You will need this for step 2.
+2. Open the terminal and change directory to where you saved the files above in step 1.
+3. Run 'python app.py' from the root directory you cloned. This will start your Flask application, which allows us to run different web pages and routes.
+4. Open your web browser and type in [Localhost:5000](Localhost:5000) in the URL. Hit Enter. From here on out, we will now refer to this page as the 'homepage'.
+5. The homepage displays international arrival information by country. Select a country from the drop down menu. This will display location on the world map, as well as # of arrivals and total GDP by year.
+6. To look through data by year, direct your browser to [Localhost:5000/latlngs](Localhost:5000/latlngs). This will show each countries arrival and GDP informataion by year.
+
 ## Initial Questions to Ask
 
 1. Based on the travel information, we want to visualize where people are traveling most frequently on both a micro (yearly) and macro level (overall)?
