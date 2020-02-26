@@ -55,9 +55,13 @@
 2. Add a new plot that shows top 5 growing international arrivals year over year.
 3. Transversely, add a plot that shows the bottom 5 in terms of declining arrivals.
 4. Find correlation between total country GDP and number of international arrivals. See if there is correlation between GDP and arrival number.
+5. Create heatmap visualization to better understand depth of arrival data.
+6. Increase Bootstrap and HTML layouts.
 
 ## Limitations
 
 1. Some libaries were limited by functionality. As such, further researach into more complete libraries would offer greater chane at success.
 2. Manipulate the year over year plots to show more visiual data.
 3. Research MapBox implementation to increase optional inputs provided for plots.
+4. Some countries did not have accurate data (Afghanistan) as they do not release international traveler data. See if there is dataset that has complete information.
+5. Given more time, could a flight arrival correlations beteween countries be found?
