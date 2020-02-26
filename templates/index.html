@@ -29,55 +29,30 @@
     <div class="row">
       <div class="col-md-12 jumbotron text-center w3-center w3-animate-zoom">
         <h1>Travel Results</h1>
-        <h5>1995-2016</h5>
+        <h5>1995-2017</h5>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="well">
           <h6>Select a Country</h6>
           <select id="selDataset" onchange="optionChanged(this.value)">
             <option></option>
           </select>
         </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Travel Info</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body"></div>
         </div>
-          <div class="dropdown">
-            <h6>Select a Region</h6>
-            <select id="Dataset" onchange="optionChanged(this.value)">
-              <option></option>
-              <option>Europe</option>
-              <option>Asia and Pacific</option>
-              <option>North America</option>
-              <option>Africa</option>
-              <option>Middle East</option>
-              <option>South America</option>
-              <option>Australia</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div id="arrival-line"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gdp-line"></div>
-      </div>
-      <div class="col-md-2">
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <br>
-        <br>
         <div id="map"></div>
-        <br>
-        <br>
       </div>
+    </div>
+    <div class="col-md-6">
+      <div id="arrival-line"></div>
+    </div>
+    <div class="col-md-6">
+      <div id="gdp-line"></div>
     </div>
   <!-- Leaflet JavaScript -->
   <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
