@@ -30,5 +30,5 @@ https://data.worldbank.org/indicator/ST.INT.ARVL?view=map
 
 ## Inspiring visualizations
 
-![Dashboard page](readme_png/Picture1.png)
-![Dashboard page](readme_png/Picture3.png)
+![Dashboard page](static/readme_png/Picture1.png)
+![Dashboard page](static/readme_png/Picture3.png)
