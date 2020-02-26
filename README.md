@@ -1,28 +1,33 @@
-# Project-2 Travel information per yearly basis 
+# Project-2 International Travel Data Visualization Dashboard
 
-## Solicia, Ben, Luis C
+## Group Members and Responsibilites
 
-Based on the travel information, we want to visualize where people are going as their travel destinations. How is the destination related to their income level? Where are the most visited countries for US travelers based on flight info?
+1. Solicia Xu - D3 visualizations, interactive YoY dashboard, Flask, HTML
+2. Ben Bastedo - SQL Database set up, Flask, Bootstrap, HTML, MapBox, Documentation
+3. Luis Casas - Flask, Bootstrap, HTML, MapBox, Documentation
 
-### Data Set:
+## Required Components to Run Dashboard
 
-https://ourworldindata.org/tourism
+1. Python
+2. JavaScript
+3. Plotly
+4. PostGres SQL
+5. SQLAchemy
+6. Flask
+7. MapBox
 
-https://knoema.com/atlas/topics/Tourism/datasets
+## Initial Questions to Ask
 
-https://www.statista.com/markets/420/travel-tourism-hospitality/
+1. Based on the travel information, we want to visualize where people are traveling most frequently on both a micro (yearly) and macro level (overall)?
+2. How do arrivals in countries with higher GDPs affect number of passsengers incoming?
+3. Are all countries travel data accurately displayed from our datasets? What could cause some discrepcansies?
 
-https://data.world/datasets/travel
+## Data Sets Chosen For Visualization
 
 https://data.worldbank.org/indicator/ST.INT.ARVL?view=map
 
-https://catalog.data.gov/dataset/country-travel-information
-
-### Inspiring visualizations:
+## Inspiring visualizations
 
 ![Dashboard page](readme_png/Picture1.png)
 ![Dashboard page](readme_png/Picture2.png)
 ![Dashboard page](readme_png/Picture3.png)
-
-
-
