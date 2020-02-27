@@ -1,0 +1,62 @@
+.tab { text-indent:40px }
+
+body{
+  background-color: rgb(214, 235, 228); 
+}
+h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 32px;
+}
+h5{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* Navbar */
+.navbar{
+  max-height: 57px; 
+}
+.navbar-nav{
+    list-style-type: none;
+}
+.nav-link{
+    display: block;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom:0.5rem;
+    padding-left: 1rem;
+}
+.navigation .navbar-brand{
+  color: white; 
+  margin-left: 50px; 
+  padding: inherit; 
+  font-weight: bold; 
+  background-color: rgb(36, 119, 115);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navbar{
+  background-color:whitesmoke; 
+  font-size: 15px; 
+}
+.active, .dropdown-menu .dropdown-item:active a:hover{
+  background-color: whitesmoke !important;
+}
+.dropdown-item{
+  color: rgb(66, 96, 124) !important; 
+}
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
+  background-color: whitesmoke !important; 
+}
+a{
+  color: rgb(66, 96, 124);
+  font-size: 15px; 
+}
+.nav-link:hover{
+  background-color: rgb(142, 174, 233) !important;
+ }
+
+.navbar-brand:hover{
+color: rgb(175, 175, 175) !important;
+}
+#map{
+  height: 600px;
+  /* width: ; */
+}

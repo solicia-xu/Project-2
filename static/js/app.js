@@ -60,9 +60,9 @@ function makePlot(countrySelected){
 			{
 				type: "scattermapbox",
 				text: selectedCountry,
-				lon: countryData['location']['long'],
-				lat: countryData['location']['lat'],
-				marker: { color: "fuchsia", size: 5000 }
+				lon: [countryData['location']['long']],
+				lat: [countryData['location']['lat']],
+				marker: { color: "fuchsia", size: 15 }
 			}
         ];
         var layout = {
