@@ -65,4 +65,3 @@
 3. Research MapBox implementation to increase optional inputs provided for plots.
 4. Some countries did not have accurate data (Afghanistan) as they do not release international traveler data. See if there is dataset that has complete information.
 5. Given more time, could a flight arrival correlations between countries be found?
-

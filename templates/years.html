@@ -5,16 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>International Arrivals Dashboard</title>
+  <title>International Air Travel Arrival Statistics</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="../static/css/style.css">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <!-- Favicon Logo -->
-  <link rel="icon" href="../static/favicon.ico">
   <style>
     body {
         background-image: url("///");
@@ -41,38 +37,52 @@
         </li>
       </ul>
     </div>
-
+    
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center w3-center w3-animate-zoom">
-        <h1>International Arrivals and Country GDP</h1>
+      <div class="col-md-9 jumbotron text-center w3-center w3-animate-zoom">
+        <h3>Travel Inbound Info and GDP data by year </h3>
         <h5>1995-2017</h5>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-3">
         <div class="well">
-          <h6>Select a Country</h6>
+          <h6>Select by year</h6>
           <select id="selDataset" onchange="optionChanged(this.value)">
             <option></option>
           </select>
-          <br>
-          <div class="item" data-aos="flip-up">
-          <div id="map"></div></div>
+        </div>
+    </div>
+    <div class="row">
+      <!-- <div class="col-md-3">
+        <div class="well">
+          <h6>Select by year</h6>
+          <select id="selDataset" onchange="optionChanged(this.value)">
+            <option></option>
+          </select>
+        </div> -->
+        <!-- <div class="panel panel-primary">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title">Travel Info</h3>
+          </div> -->
+          <!-- <div id="sample-metadata" class="panel-body"></div> -->
         </div>
         </div>
+      <div class="row">
+      <div class="col-md-9">
+        <div id="map_a"></div>
+      </div>
+      <!-- <div class="col-md-6"> -->
+        <!-- <div id="map_g"></div> -->
+      </div>
+      <!-- <br>
+      <br> -->
+      <br>
+    <div class="row">
+      <div class="col-md-9">
+        <div id="map"></div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="item" data-aos="zoom-in-left">
-      <div id="arrival-line"></div></div>
-    </div>
-    <div class="col-md-6">
-      <div class="item" data-aos="zoom-in-right">
-      <div id="gdp-line"></div></div>
-    </div>
-
   <!-- Leaflet JavaScript -->
   <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
   <!-- D3 JavaScript -->
@@ -84,12 +94,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-  <script src="../static/js/app.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script type="text/javascript">
-  </script>
+  <script src="../static/js/years.js"></script>
 </body>
 <footer class="container-fluid text-center">
-  <p>International Arrivals and Country GDP</p>
+  <p>Travel Inbound and GDP Info</p>
 </footer>
 </html>
