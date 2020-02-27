@@ -1,6 +1,6 @@
 # Project 2: International Traveler Arrival Data Visualization Dashboard
 
-## Group Members and Responsibilites
+## Group Members and Responsibilities
 
 1. Solicia Xu - D3 visualizations, interactive YoY dashboard, Flask, HTML
 2. Ben Bastedo - SQL Database set up, Flask, Bootstrap, HTML, MapBox, Documentation, AOS
@@ -25,13 +25,13 @@
 3. Run 'python app.py' from the root directory you cloned. This will start your Flask application, which allows us to run different web pages and routes.
 4. Open your web browser and type in [Localhost:5000](Localhost:5000) in the URL. Hit Enter. From here on out, we will now refer to this page as the 'homepage'.
 5. The homepage displays international arrival information by country. Select a country from the drop down menu. This will display location on the world map, as well as # of arrivals and total GDP by year.
-6. To look through data by year, direct your browser to [Localhost:5000/latlngs](Localhost:5000/latlngs). This will show each countries arrival and GDP informataion by year.
+6. To look through data by year, direct your browser to [Localhost:5000/latlngs](Localhost:5000/latlngs). This will show each countries arrival and GDP information by year.
 
 ## Initial Questions to Ask
 
 1. Based on the travel information, we want to visualize where people are traveling most frequently on both a micro (yearly) and macro level (overall)?
-2. How do arrivals in countries with higher GDPs affect number of passsengers incoming?
-3. Are all countries travel data accurately displayed from our datasets? What could cause some discrepcansies?
+2. How do arrivals in countries with higher GDPs affect number of passengers incoming?
+3. Are all countries travel data accurately displayed from our datasets? What could cause some discrepancies?
 
 ## Data Set Chosen For Visualization
 
@@ -60,8 +60,9 @@
 
 ## Limitations
 
-1. Some libaries were limited by functionality. As such, further researach into more complete libraries would offer greater chane at success.
-2. Manipulate the year over year plots to show more visiual data.
+1. Some libraries were limited by functionality. As such, further research into more complete libraries would offer greater chance at success.
+2. Manipulate the year over year plots to show more visual data.
 3. Research MapBox implementation to increase optional inputs provided for plots.
 4. Some countries did not have accurate data (Afghanistan) as they do not release international traveler data. See if there is dataset that has complete information.
-5. Given more time, could a flight arrival correlations beteween countries be found?
+5. Given more time, could a flight arrival correlations between countries be found?
+
