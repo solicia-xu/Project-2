@@ -122,18 +122,10 @@ function makePlot(countrySelected){
         var data1 = [
 			{
 				type: "scattermapbox",
-<<<<<<< HEAD
 				text: selectedCountry,
 				lon: [countryData['location']['long']],
 				lat: [countryData['location']['lat']],
 				marker: { color: "fuchsia", size: 15 }
-=======
-                text: selectedCountry,
-                lat: [countryData['location']['lat']],
-                lon: [countryData['location']['long']],
-                mode: 'markers',
-				marker: {color: "red", size: 14}
->>>>>>> feff34e60c5fe3ea8a99ab6ab41e701aa629c048
 			}
         ];
         var layout = {

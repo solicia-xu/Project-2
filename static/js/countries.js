@@ -21,30 +21,19 @@ d3.json('/arrivals').then(function (data) {
     var myConfig = {
         "type": "line",
         "title":{
-<<<<<<< HEAD
             text: "Arrival Results by Year "
-=======
-            text: "Countries arrival result "
->>>>>>> feff34e60c5fe3ea8a99ab6ab41e701aa629c048
         },
         "series": [
            {"values": Object.values(countryPick) }
         ],
         "scale-x":{
             "values":Object.keys(countryPick),
-<<<<<<< HEAD
             "label":{text: "Years"},
         },
         "scale-y":{
             "label":{text: "# of Arrivals"},
             short: true,
             'thousands-separator': ", "
-=======
-            "label":{text: "years"}
-        },
-        "scale-y":{
-            "label":{text: "arrivals"}
->>>>>>> feff34e60c5fe3ea8a99ab6ab41e701aa629c048
         },
         "plot": {
            "animation": {
@@ -73,27 +62,19 @@ d3.json('/arrivals').then(function (data) {
         var myConfig2 = {
             "type": "line",
             "title":{
-<<<<<<< HEAD
                 text: "GDP by Year (in $)"
-=======
-                text: "Countries gdp result "
->>>>>>> feff34e60c5fe3ea8a99ab6ab41e701aa629c048
             },
             "series": [
                {"values": Object.values(countryPick) }
             ],
             "scale-x":{
                 "values":Object.keys(countryPick),
-<<<<<<< HEAD
                 "label":{text: "Years"},
             },
             "scale-y":{
                 "label":{text: "GDP of Country (in $)"},
                 short: true,
                 'thousands-separator': ", "
-=======
-                "label":{text: "years"}
->>>>>>> feff34e60c5fe3ea8a99ab6ab41e701aa629c048
             },
             "plot": {
                "animation": {
@@ -117,11 +98,6 @@ d3.json('/arrivals').then(function (data) {
             }
         })
         var countryPick = countryData['location']
-<<<<<<< HEAD
-=======
-        // console.log(countryData['location']['lat'])
-        // console.log(countryData['location']['long'])
->>>>>>> feff34e60c5fe3ea8a99ab6ab41e701aa629c048
         var data1 = [
 			{
 				type: "scattermapbox",
@@ -144,12 +120,9 @@ d3.json('/arrivals').then(function (data) {
 function optionChanged(newCountry) {
     // Select the input value from the form
     makePlot(newCountry);
-<<<<<<< HEAD
     // Initialize Animate on Scroll
     AOS.init({
         duration: 1200,
       })
-=======
->>>>>>> feff34e60c5fe3ea8a99ab6ab41e701aa629c048
 }
 

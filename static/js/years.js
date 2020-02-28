@@ -4,19 +4,7 @@ data.forEach((i)=>{
         // console.log(i)
         select.append('option').text(i);
 })
-// var myMap = L.map("map", {
-//         center: [37.09, -95.71],
-//         zoom: 5,
-//         // layers: greyscale
-//     });
-// var greyscale = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-//         maxZoom: 18,
-//         id: "mapbox.light",
-//         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-//                  '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-//                  'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-//         accessToken: 'pk.eyJ1Ijoic29saWNpYSIsImEiOiJjazZhOXZxZnkwb2d3M2xxZmxjMGlmdXk4In0.7Sb_bC4V_2O-QsS4P0ZGfQ' 
-//     }).addTo(myMap);
+
 function makeMap(SelectedYear){
         d3.json('/years_arrival_map').then(function(data){
                 console.log(data);
