@@ -57,6 +57,7 @@
 4. Find correlation between total country GDP and number of international arrivals. See if there is correlation between GDP and arrival number.
 5. Create heatmap visualization to better understand depth of arrival data.
 6. Increase Bootstrap and HTML layouts.
+7. Host data on cloud database to make this a deployable app.
 
 ## Limitations
 

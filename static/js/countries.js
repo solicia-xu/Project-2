@@ -21,17 +21,19 @@ d3.json('/arrivals').then(function (data) {
     var myConfig = {
         "type": "line",
         "title":{
-            text: "Countries arrival result "
+            text: "Arrival Results by Year "
         },
         "series": [
            {"values": Object.values(countryPick) }
         ],
         "scale-x":{
             "values":Object.keys(countryPick),
-            "label":{text: "years"}
+            "label":{text: "Years"},
         },
         "scale-y":{
-            "label":{text: "arrivals"}
+            "label":{text: "# of Arrivals"},
+            short: true,
+            'thousands-separator': ", "
         },
         "plot": {
            "animation": {
@@ -60,14 +62,19 @@ d3.json('/arrivals').then(function (data) {
         var myConfig2 = {
             "type": "line",
             "title":{
-                text: "Countries gdp result "
+                text: "GDP by Year (in $)"
             },
             "series": [
                {"values": Object.values(countryPick) }
             ],
             "scale-x":{
                 "values":Object.keys(countryPick),
-                "label":{text: "years"}
+                "label":{text: "Years"},
+            },
+            "scale-y":{
+                "label":{text: "GDP of Country (in $)"},
+                short: true,
+                'thousands-separator': ", "
             },
             "plot": {
                "animation": {
@@ -91,8 +98,6 @@ d3.json('/arrivals').then(function (data) {
             }
         })
         var countryPick = countryData['location']
-        // console.log(countryData['location']['lat'])
-        // console.log(countryData['location']['long'])
         var data1 = [
 			{
 				type: "scattermapbox",
@@ -115,5 +120,9 @@ d3.json('/arrivals').then(function (data) {
 function optionChanged(newCountry) {
     // Select the input value from the form
     makePlot(newCountry);
+    // Initialize Animate on Scroll
+    AOS.init({
+        duration: 1200,
+      })
 }
 
