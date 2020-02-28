@@ -107,11 +107,8 @@ def names():
     # Convert list of tuples into normal list
     all_country_arrivals = []
     for country in arrival_results:
-        # random_arrival ={}
         arrivals1 = {}
         arrivals1[country.CountryName] = {}
-        # arrivals1[country.CountryName]["latitude"] = float(country.Lat)
-        # arrivals1[country.CountryName]["longitude"] = float(country.Long)
         arrivals1[country.CountryName]["countrycode"] = country.CountryCode
 
         arrivals1[country.CountryName]["Years"] = {}
@@ -147,8 +144,6 @@ def names():
 
 @app.route("/gdp")
 def passengers():
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
-
     # Open a communication session with the database
     session = Session(engine)
 
@@ -192,9 +187,6 @@ def passengers():
         gdp1[country.CountryName]['Years']["2016"] = country.y2016
         gdp1[country.CountryName]['Years']["2017"] = country.y2017
         all_country_gdp.append(gdp1)
-
-
-
     return jsonify(all_country_gdp)
 
 @app.route("/years_arrival")
