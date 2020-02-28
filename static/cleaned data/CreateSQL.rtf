@@ -1,0 +1,88 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- Table: public.arrivals\
+\
+-- DROP TABLE public.arrivals;\
+\
+CREATE TABLE public.arrivals\
+(\
+    countryname text COLLATE pg_catalog."default" NOT NULL,\
+    countrycode text COLLATE pg_catalog."default",\
+    lat numeric,\
+    "long" numeric,\
+    y1995 integer,\
+    y1996 integer,\
+    y1997 integer,\
+    y1998 integer,\
+    y1999 integer,\
+    y2000 integer,\
+    y2001 integer,\
+    y2002 integer,\
+    y2003 integer,\
+    y2004 integer,\
+    y2005 integer,\
+    y2006 integer,\
+    y2007 integer,\
+    y2008 integer,\
+    y2009 integer,\
+    y2010 integer,\
+    y2011 integer,\
+    y2012 integer,\
+    y2013 integer,\
+    y2014 integer,\
+    y2015 integer,\
+    y2016 integer,\
+    y2017 integer,\
+    CONSTRAINT arrivals_pkey PRIMARY KEY (countryname)\
+)\
+\
+TABLESPACE pg_default;\
+\
+ALTER TABLE public.arrivals\
+    OWNER to postgres;\
+\
+-- Table: public.gdp\
+\
+-- DROP TABLE public.gdp;\
+\
+CREATE TABLE public.gdp\
+(\
+    countryname text COLLATE pg_catalog."default" NOT NULL,\
+    countrycode text COLLATE pg_catalog."default",\
+    lat numeric,\
+    "long" numeric,\
+    y1995 bigint,\
+    y1996 bigint,\
+    y1997 bigint,\
+    y1998 bigint,\
+    y1999 bigint,\
+    y2000 bigint,\
+    y2001 bigint,\
+    y2002 bigint,\
+    y2003 bigint,\
+    y2004 bigint,\
+    y2005 bigint,\
+    y2006 bigint,\
+    y2007 bigint,\
+    y2008 bigint,\
+    y2009 bigint,\
+    y2010 bigint,\
+    y2011 bigint,\
+    y2012 bigint,\
+    y2013 bigint,\
+    y2014 bigint,\
+    y2015 bigint,\
+    y2016 bigint,\
+    y2017 bigint,\
+    CONSTRAINT gdp_pkey PRIMARY KEY (countryname)\
+)\
+\
+TABLESPACE pg_default;\
+\
+ALTER TABLE public.gdp\
+    OWNER to postgres;}

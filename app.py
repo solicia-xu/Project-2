@@ -47,18 +47,19 @@ def countries():
 @app.route("/maps")
 def maps():
     return render_template("maps.html")
-# @app.route("/route_option")
-# def welcome():
-#     """List all available api routes."""
-#     return (
-#         f"Available Routes:<br/>"
-#         f"/tojavascript<br/>"
-#         f"----for plotly dashboard <br/>"
-#         f"/latlngs<br/>"
-#         f"/countries<br/>"
-#         f"/arrivals<br/>"
-#         f"/gdp<br/>"
-#     )
+@app.route("/apis")
+def welcome():
+    """List all available api routes."""
+    return (
+        f"Available APIs:<br/>"
+        f"/arrivals<br/>"
+        f"/countries<br/>"
+        f"/latlngs<br/>"
+        f"/years_arrival<br/>"
+        f"/years_arrival_map<br/>"
+        f"/years_gdp<br/>"
+        f"/years_gdp_map<br/>"
+    )
 @app.route("/latlngs")
 def latlngs():
 
@@ -228,7 +229,7 @@ def years_arrival_map():
         val = 'y' + str(year)
         year_vals = []
         for country in arrival_results:
-            print(country.__dict__.keys())
+            # print(country.__dict__.keys())
             year_vals.append({'country': str(country.CountryName), 'arrivals': country.__dict__[val] , 'location': [country.Lat, country.Long]})
         years[str(year)] = year_vals
     # print(years)
@@ -369,7 +370,7 @@ def years_gdp_map():
         val = 'y' + str(year)
         year_vals = []
         for country in arrival_results:
-            print(country.__dict__.keys())
+            # print(country.__dict__.keys())
             year_vals.append({'country': str(country.CountryName), 'gdp': country.__dict__[val] , 'location': [country.Lat, country.Long]})
         years[str(year)] = year_vals
     return jsonify(years)
