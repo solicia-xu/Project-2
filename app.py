@@ -15,7 +15,7 @@ from flask import Flask, render_template, redirect, request,jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("postgres://postgres:123abc@localhost:5432/project_2")
+engine = create_engine("postgres://postgres:postgres@localhost:5432/TravelDb")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -107,11 +107,8 @@ def names():
     # Convert list of tuples into normal list
     all_country_arrivals = []
     for country in arrival_results:
-        # random_arrival ={}
         arrivals1 = {}
         arrivals1[country.CountryName] = {}
-        # arrivals1[country.CountryName]["latitude"] = float(country.Lat)
-        # arrivals1[country.CountryName]["longitude"] = float(country.Long)
         arrivals1[country.CountryName]["countrycode"] = country.CountryCode
 
         arrivals1[country.CountryName]["Years"] = {}
@@ -147,8 +144,6 @@ def names():
 
 @app.route("/gdp")
 def passengers():
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
-
     # Open a communication session with the database
     session = Session(engine)
 
@@ -192,9 +187,6 @@ def passengers():
         gdp1[country.CountryName]['Years']["2016"] = country.y2016
         gdp1[country.CountryName]['Years']["2017"] = country.y2017
         all_country_gdp.append(gdp1)
-
-
-
     return jsonify(all_country_gdp)
 
 @app.route("/years_arrival")
@@ -235,125 +227,7 @@ def years_arrival_map():
     # print(years)
     return jsonify(years)
             
-    # for country in arrival_results:
-    #     # years["1995"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y1995
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     # years["1996"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y1996
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["1997"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y1997
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["1998"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y1998
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["1999"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y1999
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2000"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2000
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2001"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2001
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2002"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2002
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2003"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2003
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2004"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2004
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2005"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2005
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2006"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2006
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2007"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2007
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2008"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2008
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2009"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2009
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2010"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2010
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2011"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2011
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2012"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2012
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2013"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2013
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2014"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2014
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2015"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2015
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2016"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2016
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     years["2017"][str(country.CountryName)] = {}
-    #     years[str(year)][str(country.CountryName)]['arrivals'] = country.y2017
-    #     years[str(year)][str(country.CountryName)]['location'] = []
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Lat))
-    #     years[str(year)][str(country.CountryName)]['location'].append(float(country.Long))
-    #     all_country_stuff.append(years)
-    # return jsonify(all_country_stuff)
-
+   
 @app.route("/years_gdp_map")
 def years_gdp_map():
 # Query all passengers

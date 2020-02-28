@@ -24,11 +24,45 @@ function makePlot(countrySelected){
         var trace1 = {
             x: Object.keys(countryPick),
             y: Object.values(countryPick),
+            name: 'International Arrivals',
             type: 'scatter'
         }
-        Plotly.newPlot('arrival-line', [trace1])
+
+        var layout = {
+            title: {
+              text:'International Arrivals',
+              font: {
+                family: 'Courier New, monospace',
+                size: 24
+              },
+              xref: 'paper'
+            //   x: 0.05,
+            },
+            xaxis: {
+              title: {
+                text: 'Year',
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 18,
+                  color: '#7f7f7f'
+                }
+              },
+            },
+            yaxis: {
+              title: {
+                text: '# of Arrivals',
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 18,
+                  color: '#7f7f7f'
+                }
+              }
+            }
+          };
+        Plotly.newPlot('arrival-line', [trace1], layout)
     }
     )
+
     //make line graph with gdp data
     d3.json('/gdp').then(function (data) {
         var selectedCountry = d3.select("#selDataset").node().value; 
@@ -44,7 +78,38 @@ function makePlot(countrySelected){
             y: Object.values(countryPick),
             type: 'scatter'
         }
-        Plotly.newPlot('gdp-line', [trace2])
+        var layout = {
+            title: {
+              text:'Gross Domestic Product',
+              font: {
+                family: 'Courier New, monospace',
+                size: 24
+              },
+              xref: 'paper'
+            //   x: 0.05,
+            },
+            xaxis: {
+              title: {
+                text: 'Year',
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 18,
+                  color: '#7f7f7f'
+                }
+              },
+            },
+            yaxis: {
+              title: {
+                text: 'GDP by Year',
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 18,
+                  color: '#7f7f7f'
+                }
+              }
+            }
+          };
+        Plotly.newPlot('gdp-line', [trace2], layout)
     })
     d3.json('/arrivals').then(function (data) {
         var selectedCountry = d3.select("#selDataset").node().value; 
@@ -54,8 +119,6 @@ function makePlot(countrySelected){
             }
         })
         var countryPick = countryData['location']
-        // console.log(countryData['location']['lat'])
-        // console.log(countryData['location']['long'])
         var data1 = [
 			{
 				type: "scattermapbox",
@@ -67,7 +130,7 @@ function makePlot(countrySelected){
         ];
         var layout = {
 			dragmode: "zoom",
-			mapbox: { style: "open-street-map"},
+			mapbox: { style: "open-street-map", zoom:1.5},
 			margin: { r: 0, t: 0, b: 0, l: 0 }
         };
         console.log(data1)
@@ -78,5 +141,9 @@ function makePlot(countrySelected){
 function optionChanged(newCountry) {
     // Select the input value from the form
     makePlot(newCountry);
+    // Initialize Animate on Scroll
+    AOS.init({
+      duration: 1200,
+    })
 }
   
