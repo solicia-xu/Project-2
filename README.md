@@ -1,5 +1,7 @@
 # Project 2: International Traveler Arrival Data Visualization Dashboard
 
+## Website:  https://solicia-xu.github.io/Project-2/
+
 ## Group Members and Responsibilities
 
 1. Solicia Xu - D3 visualizations, Plotly, Zingchart.js, interactive YoY dashboard, Flask, HTML, Bootstrap
