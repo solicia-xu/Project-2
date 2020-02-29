@@ -15,7 +15,7 @@ from flask import Flask, render_template, redirect, request,jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("postgres://postgres:postgres@localhost:5432/TravelDb")
+engine = create_engine("postgres://postgres:123abc@localhost:5432/project_2")
 
 # reflect an existing database into a new model
 Base = automap_base()
