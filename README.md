@@ -2,7 +2,7 @@
 
 ## Group Members and Responsibilities
 
-1. Solicia Xu - D3 visualizations, interactive YoY dashboard, Flask, HTML
+1. Solicia Xu - D3 visualizations, Plotly, Zingchart.js, interactive YoY dashboard, Flask, HTML, Bootstrap
 2. Ben Bastedo - SQL Database set up, Flask, Bootstrap, HTML, MapBox, Documentation, AOS
 3. Luis Casas - Flask, Bootstrap, HTML, MapBox, Documentation
 
